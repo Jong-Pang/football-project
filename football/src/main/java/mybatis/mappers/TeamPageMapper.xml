@@ -2,6 +2,7 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="mybatis.mappers.TeamPageMapper">
+<<<<<<< HEAD
 
 	<!-- <select id="insertTeampageArticle" parameterType="string" resultType="kr.co.sist.football.test.model.dto.TeampageDTO"> 
 		select * from TeampageDTO </select> -->
@@ -11,10 +12,13 @@
 		#{name},#{email},#{password},#{tel},#{position},sysdate) </insert> -->
 	
 	<!--팀 가입  -->
+=======
+>>>>>>> dev
 	<update id="updateTeamId" parameterType="HashMap">
 		update member set
 		team_id = #{teamId} where member.id = #{memberId}
 	</update>
+<<<<<<< HEAD
 
 
 	<select id="selectTeamInfo" parameterType="int"
@@ -41,4 +45,6 @@
 		DELETE FROM team_info where team_id=#{teamId}
 	</delete>
 	
+=======
+>>>>>>> dev
 </mapper>

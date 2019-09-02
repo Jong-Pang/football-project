@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="mybatis.mappers.CommonMapper">
+	<select id="selectTeamInfo" parameterType="int"
+		resultType="kr.co.sist.football.common.model.dto.TeamInfo">
+		SELECT
+		id,
+		name,
+		logo_path logoPath,
+		present_num presentNum,
+		max_num maxNum,
+		uniform_color_code uniformColorCode,
+		strength_code
+		strengthCode,
+		location,
+		formation
+		FROM
+		team_info
+		WHERE
+		id=#{teamId}
+	</select>
+</mapper>

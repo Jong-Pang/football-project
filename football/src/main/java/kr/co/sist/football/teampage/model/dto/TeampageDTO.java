@@ -21,6 +21,7 @@ public class TeampageDTO {
 		this.id = id;
 	}
 
+
 	@Override
 	public String toString() {
 		return "TeampageDTO [teamId=" + teamId + ", id=" + id + "]";

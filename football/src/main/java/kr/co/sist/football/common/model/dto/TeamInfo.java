@@ -1,4 +1,4 @@
-package kr.co.sist.football.teampage.model.dto;
+package kr.co.sist.football.common.model.dto;
 
 public class TeamInfo {
 	private int id;

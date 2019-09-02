@@ -7,9 +7,6 @@ public class MybatisConnector {
 
 	private SqlSessionFactory sqlFactory;
 
-	public MybatisConnector() {
-	}
-
 	public MybatisConnector(SqlSessionFactory sqlFactory) {
 		this.sqlFactory = sqlFactory;
 	}

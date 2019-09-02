@@ -7,6 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta http-equiv="X-UA-Compatible" content="ie=edge" />
 <title>Document</title>
+<<<<<<< HEAD
 <link rel="stylesheet" type="text/css" href="test.css" />
 
 <style type="text/css">
@@ -273,6 +274,10 @@ img.player {
 	border-radius: 50%;
 }
 </style>
+=======
+<link rel="stylesheet" type="text/css" href="teamplayer.css" />
+<link rel="stylesheet" type="text/css" href="default.css" />
+>>>>>>> dev
 </head>
 <body>
 	<div class="container_body">
@@ -321,9 +326,14 @@ img.player {
 					</div>
 				</div>
 			</div>
+<<<<<<< HEAD
 		</div>
+=======
+		</form>
+	</div>
+>>>>>>> dev
 </body>
-<script src="Templating.js"></script>
+<script src="/resources/js/Templating.js"></script>
 <script>
 	window.onload = function() {
 		initPage();

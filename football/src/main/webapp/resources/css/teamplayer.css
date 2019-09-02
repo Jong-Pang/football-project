@@ -126,3 +126,81 @@ img {
 	height: 178px;
 	border-radius: 100px;
 }
+
+/*playerpagecss  */
+.platercard {
+	position: relative;
+	width: 250px;
+	height: 350px;
+	margin: 60px auto;
+}
+
+.platercard:hover>.thecard {
+	transform: rotateY(180deg);
+	cursor: pointer;
+}
+
+.thecard {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	transform-style: preserve-3d;
+	transition: all 0.5s ease;
+}
+
+thecard:hover {
+	transform: rotateY(180deg);
+}
+
+.thefront {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	backface-visibility: hidden;
+	background: goldenrod;
+	color: black;
+	text-align: center;
+	font-family: 'zilla slab', sans-serif;
+	border-radius: 10px;
+	font-size: 20spx;
+	font-weight: bold;
+}
+
+.thefront p {
+	font-size: 65px;
+	line-height: 65px;
+}
+
+.theback {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	backface-visibility: hidden;
+	background: #fafafa;
+	color: #555;
+	text-align: center;
+	font-family: 'zilla slab', sans-serif;
+	border-radius: 10px;
+	text-align: left;
+	transform: rotateY(180deg);
+}
+
+.cardContent {
+	font-size: 12px;
+	padding: 8px;
+}
+
+img.bottomright {
+	position: absolute;
+	bottom: 8px;
+	right: 16px;
+	font-size: 18px;
+	width: 50px;
+	height: 50px;
+}
+
+img.player {
+	width: 100px;
+	height: 100px;
+	border-radius: 50%;
+}

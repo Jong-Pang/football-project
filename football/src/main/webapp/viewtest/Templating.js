@@ -6,10 +6,15 @@ const CONTAINER = {
   </div>
 
   <div class="navbar">
-    <a class="navbar_menu" href="#">
-      menu1
+    <a class="navbar_menu" href="/gamelist">
+      <b>게임리스트</b>
       </a>
-    <a href="#">menu2</a>
+     <a class="navbar_menu" href="/teamlist">
+      <b>팀리스트</b>
+      </a>
+      <a class="navbar_menu" href="/teampage">
+      <b>팀페이지</b>
+      </a>
   </div>
 </div>
   <div class="conatiner_header_menu">

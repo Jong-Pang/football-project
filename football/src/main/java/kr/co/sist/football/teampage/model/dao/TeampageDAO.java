@@ -7,7 +7,6 @@ import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-import kr.co.sist.football.teampage.model.dto.TeamInfo;
 import mybatis.config.MybatisConnector;
 
 @Repository
@@ -31,16 +30,7 @@ public class TeampageDAO {
 
 		try {
 			return sqlSession.update(namespace + ".updateTeamId", updateTeamIdMap);
-		} finally {
-			sqlSession.close();
-		}
-	}
 
-	public TeamInfo getTeamInfo(int teamId) {
-		SqlSession sqlSession = mybatisconnector.sqlSession();
-		TeamInfo teamInfo = sqlSession.selectOne(namespace + ".selectTeamInfo", teamId);
-		try {
-			return teamInfo;
 		} finally {
 			sqlSession.close();
 		}

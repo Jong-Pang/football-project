@@ -6,6 +6,7 @@ import java.util.Map;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import kr.co.sist.football.common.model.dao.CommonDao;
 import kr.co.sist.football.teampage.model.dao.TeampageDAO;
 import kr.co.sist.football.teampage.model.dto.Teampage;
 
@@ -13,18 +14,20 @@ import kr.co.sist.football.teampage.model.dto.Teampage;
 public class TeampageService {
 
 	TeampageDAO teampageDAO;
+	CommonDao commonDao;
 
 	@Autowired
-	public TeampageService(TeampageDAO teampageDAO) {
+	public TeampageService(TeampageDAO teampageDAO, CommonDao commonDao) {
 		this.teampageDAO = teampageDAO;
+		this.commonDao = commonDao;
 	}
+
+
 
 	public Teampage getTeampage(int teamId) {
 		Teampage teampage = new Teampage();
-		
-		teampage.setTeamInfo(teampageDAO.getTeamInfo(teamId));
-		
-		
+
+		teampage.setTeamInfo(commonDao.getTeamInfo(teamId));
 
 		return teampage;
 	}
@@ -40,6 +43,7 @@ public class TeampageService {
 		statusCode = teampageDAO.updateTeamId(updateTeamIdMap);
 
 		return statusCode;
+
 	}
 	
 	

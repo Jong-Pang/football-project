@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="mybatis.mappers.GameMapper">
+
+	<select id="selectGameCount" parameterType="int"
+		resultType="int">
+		select nvl(count(*),0) from game_info where kind = #{kind}
+		<!-- and date_format(reg_date, '%y-%M-%d') = ? -->
+	</select>
+
+	<select id="selectGamesByDate" parameterType="hashmap"
+		resultType="kr.co.sist.football.common.model.dto.GameInfo">
+		SELECT
+		id,
+		status_code statusCode,
+		max_person_num maxPersonNum,
+		kind,
+		game_date gameDate,
+		duration,
+		description,
+		maxnum_team maxinumTeam
+		FROM
+		game_info
+		WHERE
+		kind = #{kind} AND
+		to_char(game_date, 'MM')= #{month}
+	</select>
+</mapper>
