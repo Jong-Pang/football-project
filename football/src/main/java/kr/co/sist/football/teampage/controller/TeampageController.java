@@ -57,4 +57,14 @@ public class TeampageController {
 		
 		return "team/teamplayer";
 	}
+	//팀 탈퇴
+	@GetMapping("/delete")
+	public String teamDelete(@RequestParam int teamId, Model model) {
+	
+		
+		return "team/deletepage";
+	}
+	
+	
+	
 }

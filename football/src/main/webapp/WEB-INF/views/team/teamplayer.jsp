@@ -10,6 +10,62 @@
 <link rel="stylesheet" type="text/css" href="test.css" />
 
 <style type="text/css">
+body {
+  margin: 0px;
+}
+
+.container_header {
+  width: 100%;
+  height: 100px;
+  position: relative;
+}
+
+.conatiner_header_menu {
+  display: inline;
+  position: absolute;
+  top: 5px;
+  right: 10px;
+}
+
+.container_absolute_bottom {
+  position: absolute;
+  bottom: 0px;
+  width: 100%;
+}
+
+.container_body {
+  margin: 10px;
+}
+
+.logo {
+  display: inline;
+  margin: 20px;
+}
+
+.logo h1 {
+  display: inherit;
+}
+
+.header_menu {
+  margin-left: 3px;
+  margin-right: 3px;
+}
+
+.navbar {
+  display: inline;
+}
+
+.navbar_menu {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.footer_contents {
+  background-color: lightgray;
+  height: 100px;
+}
+
+/*teampage css  */
 * {
 	box-sizing: border-box;
 	font-family: Arial, Helvetica, sans-serif;
@@ -217,9 +273,6 @@ img.player {
 	border-radius: 50%;
 }
 </style>
-
-
-
 </head>
 <body>
 	<div class="container_body">
@@ -245,10 +298,9 @@ img.player {
 					<li><a href="teampage/player">선수정보</a></li>
 				</ul>
 			</div>
-
-
-			<br> <br> <br>
-
+			
+		<br> <br> <br>
+		
 			<div class="platercard">
 				<div class="thecard">
 					<div class="thefront">
@@ -268,10 +320,8 @@ img.player {
 						</div>
 					</div>
 				</div>
-
-
 			</div>
-	</div>
+		</div>
 </body>
 <script src="Templating.js"></script>
 <script>

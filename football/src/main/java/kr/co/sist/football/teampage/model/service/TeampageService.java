@@ -30,6 +30,7 @@ public class TeampageService {
 	}
 
 	public int setTeamId(int memberId, int teamId) {
+		
 		int statusCode = -1;
 
 		Map<String, Integer> updateTeamIdMap = new HashMap<String, Integer>();
@@ -40,4 +41,6 @@ public class TeampageService {
 
 		return statusCode;
 	}
+	
+	
 }

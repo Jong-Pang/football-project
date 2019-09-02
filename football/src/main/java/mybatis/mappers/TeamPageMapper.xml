@@ -9,7 +9,8 @@
 	<!-- <insert id="insertTeamMember" parameterType="kr.co.sist.football.test.model.dto.TeampageDTO"> 
 		insert into member values (#{id},#{team_id},#{nick_name},#{manner_score},#{pic_path},#{foot_code}, 
 		#{name},#{email},#{password},#{tel},#{position},sysdate) </insert> -->
-
+	
+	<!--팀 가입  -->
 	<update id="updateTeamId" parameterType="HashMap">
 		update member set
 		team_id = #{teamId} where member.id = #{memberId}
@@ -35,4 +36,9 @@
 		id=#{teamId}
 	</select>
 
+	<!--팀 탈퇴  -->
+	<delete id = "deleteTeamId">
+		DELETE FROM team_info where team_id=#{teamId}
+	</delete>
+	
 </mapper>
