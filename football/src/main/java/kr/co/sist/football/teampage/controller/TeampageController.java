@@ -72,5 +72,16 @@ public class TeampageController {
 			return "redirect:/teampage/teampage";
 			
 		}
+	
+	}
+	@RequestMapping("/single")
+	
+	public ModelAndView singlePage() {
+		
+		ModelAndView mv = new ModelAndView();
+		
+		mv.setViewName("team/single-team.html");
+		
+		return mv;
 	}
 }
