@@ -28,14 +28,14 @@ const CONTAINER = {
                       <li class="current">
                         <a href="/teamlist">Teams</a>
                       </li>
-                      <li>
+                      <li class="current">
                         <a href="/gamelist">Matches</a>
                         <ul class="sub-current">
                             <li>
                                 <a href="/gamelist">Matches</a>
                             </li>
                             <li>
-                                 <a href="/gameschedule">Match Calendars</a>
+                                <a href="/gameschedule">Match Calendars</a>
                             </li>
                         </ul>
                       </li>
@@ -50,10 +50,12 @@ const CONTAINER = {
                   </div>
                 </nav>
                 <!-- End mainmenu-->
-               
-               
               </div>
               <!-- End nav Header-->
+            </div>
+            <div class="header-top">
+              <a href="/login">log-in</a>
+              <a href="/register">join</a>
             </div>
           </div>
         </div>
