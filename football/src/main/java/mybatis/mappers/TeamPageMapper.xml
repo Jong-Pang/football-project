@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
 <mapper namespace="mybatis.mappers.TeamPageMapper">
-<<<<<<< HEAD
+
 
 	<!-- <select id="insertTeampageArticle" parameterType="string" resultType="kr.co.sist.football.test.model.dto.TeampageDTO"> 
 		select * from TeampageDTO </select> -->
@@ -10,19 +11,18 @@
 	<!-- <insert id="insertTeamMember" parameterType="kr.co.sist.football.test.model.dto.TeampageDTO"> 
 		insert into member values (#{id},#{team_id},#{nick_name},#{manner_score},#{pic_path},#{foot_code}, 
 		#{name},#{email},#{password},#{tel},#{position},sysdate) </insert> -->
-	
-	<!--팀 가입  -->
-=======
->>>>>>> dev
+
+	<!--팀 가입 -->
+
 	<update id="updateTeamId" parameterType="HashMap">
 		update member set
 		team_id = #{teamId} where member.id = #{memberId}
 	</update>
-<<<<<<< HEAD
+
 
 
 	<select id="selectTeamInfo" parameterType="int"
-		resultType="kr.co.sist.football.teampage.model.dto.TeamInfo">
+		resultType="kr.co.sist.football.common.model.dto.TeamInfo">
 		SELECT
 		id,
 		name,
@@ -40,11 +40,11 @@
 		id=#{teamId}
 	</select>
 
-	<!--팀 탈퇴  -->
-	<delete id = "deleteTeamId">
-		DELETE FROM team_info where team_id=#{teamId}
-	</delete>
-	
-=======
->>>>>>> dev
+	<!--팀 탈퇴 -->
+	<update id="updateTeamIdOfMemberToZero" parameterType="int">
+		UPDATE member
+		SET team_id = 0 WHERE id = #{memberId}
+	</update>
+
+
 </mapper>

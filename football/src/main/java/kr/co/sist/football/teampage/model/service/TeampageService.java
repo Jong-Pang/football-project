@@ -14,6 +14,7 @@ import kr.co.sist.football.teampage.model.dto.Teampage;
 public class TeampageService {
 
 	TeampageDAO teampageDAO;
+
 	CommonDao commonDao;
 
 	@Autowired
@@ -21,8 +22,6 @@ public class TeampageService {
 		this.teampageDAO = teampageDAO;
 		this.commonDao = commonDao;
 	}
-
-
 
 	public Teampage getTeampage(int teamId) {
 		Teampage teampage = new Teampage();
@@ -33,7 +32,7 @@ public class TeampageService {
 	}
 
 	public int setTeamId(int memberId, int teamId) {
-		
+
 		int statusCode = -1;
 
 		Map<String, Integer> updateTeamIdMap = new HashMap<String, Integer>();
@@ -43,8 +42,14 @@ public class TeampageService {
 		statusCode = teampageDAO.updateTeamId(updateTeamIdMap);
 
 		return statusCode;
-
 	}
-	
-	
+
+	public int quitTeam(int id, String password) {
+
+		int statusCode = -1;
+
+		statusCode = teampageDAO.deleteTeamId(0);
+
+		return statusCode;
+	}
 }

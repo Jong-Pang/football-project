@@ -1,6 +1,5 @@
 package kr.co.sist.football.teampage.model.dao;
 
-import java.util.HashMap;
 import java.util.Map;
 
 import org.apache.ibatis.session.SqlSession;
@@ -35,16 +34,21 @@ public class TeampageDAO {
 			sqlSession.close();
 		}
 	}
-	//팀 탈퇴 
-	public int deleteTeamId(int teamId) {
+
+	// 팀 탈퇴
+	public int deleteTeamId(int id) {
 		SqlSession sqlSession = mybatisconnector.sqlSession();
-		
+		int statusCode = 1;
+
 		try {
-			return sqlSession.delete(namespace + ".deleteTeamId", teamId);
+			statusCode = sqlSession.update(namespace + ".updateTeamIdOfMemberToZero", 0);
 			
-		}finally {
+			return statusCode;
+			
+		} finally {
+			
 			sqlSession.close();
 		}
 	}
-	
+
 }

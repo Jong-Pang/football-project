@@ -5,7 +5,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -20,19 +22,14 @@ public class TeampageController {
 
 	@Autowired
 	public TeampageService teampageService;
-	
-	
-	@GetMapping
-	public String teampage(@RequestParam(name = "teamId", required = false, defaultValue = "-1") int teamId,
-			Model model) {
-		if (teamId == -1) {
-			return "redirect:/teampage/jointeam";
-		}
+	public TeampageDTO teampageDTO;
 
+	@GetMapping
+	public String teampage(@RequestParam(name = "teamId", required = false) int teamId, Model model) {
 		Teampage teampage = teampageService.getTeampage(teamId);
-	
+
 		model.addAttribute("teampage", teampage);
-	
+
 		return "team/teampage";
 	}
 
@@ -51,20 +48,29 @@ public class TeampageController {
 
 		return mv;
 	}
+
 	@GetMapping("/player")
 	public String teamPlayer() {
-		
-		
+
 		return "team/teamplayer";
 	}
-	//팀 탈퇴
-	@GetMapping("/delete")
-	public String teamDelete(@RequestParam int teamId, Model model) {
-	
-		
-		return "team/deletepage";
+
+	// 팀 탈퇴
+	@GetMapping("/quit")
+	public String quitTeam(@RequestParam int id, @RequestParam String password) {
+
+		teampageService.quitTeam(id, password);
+
+		boolean pwCheck = teampageDTO.matchPassword(password);
+
+		if (!pwCheck) {
+
+			return "team/quit";
+
+		} else {
+
+			return "redirect:/teampage/teampage";
+			
+		}
 	}
-	
-	
-	
 }
