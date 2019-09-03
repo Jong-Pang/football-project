@@ -86,6 +86,7 @@
 				style="background: url(img/clubs-teams/colombia.jpg);"></div>
 		</div>
 		<!-- End Section Title -->
+		
 		<section class="content-info">
 			<!-- Single Team Tabs -->
 			<div class="single-team-tabs">
@@ -174,7 +175,8 @@
 		</div>
  --%>
 </body>
-<script src="${pageContext.request.contextPath}/resources/js/Templating.js"></script>
+<script
+	src="${pageContext.request.contextPath}/resources/js/Templating.js"></script>
 <script>
 	window.onload = function() {
 		initPage();
